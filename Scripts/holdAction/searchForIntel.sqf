@@ -11,6 +11,6 @@
 	{ _this call hint "Intel Found!", _caller switchMove "AinvPknlMstpSnonWrflDnon_medicEnd" }, // Code executed on completion. (Required to use switchMove due to repeated tick queue)
 	{ _this call hint "Search incomplete.", _caller switchMove "AinvPknlMstpSnonWrflDnon_medicEnd" }, // Code executed on interrupted.
 	[],
-	5, 10,
+	8, 10,
 	true, false
 ] remoteExec ["BIS_fnc_holdActionAdd", 0, squadLeader];
