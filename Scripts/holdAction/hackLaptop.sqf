@@ -9,10 +9,10 @@
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Progress icon shown on screen.
 	"_this distance _target < 3", // Condition for the action to be shown. (Check if the player (_target_) is within 3m)
 	"_caller distance _target < 3", // Condition for the action to progress. (Check if the player (_caller) stays within 3m)
-	{}, // Code executed when action starts.
+	{ _caller playMove "Acts_Accessing_Computer_in", _caller playMove "Acts_Accessing_Computer_Loop" }, // Code executed when action starts.
 	{}, // Code executed on every progress tick.
-	{ _this call hint "Computer Hacked" }, // Code executed on completion.
-	{ _this call hint "Hack Incomplete." }, // Code executed on interrupted.
+	{ _this call hint "Computer Hacked", _caller playMoveNow "Acts_Accessing_Computer_Out_Short" }, // Code executed on completion.
+	{ _this call hint "Hack Incomplete.", _caller playMoveNow "Acts_Accessing_Computer_Out_Short" }, // Code executed on interrupted.
 	[], // Arguments passed to the scripts as _this select 3
 	10, // Action duration in seconds.
 	10, // Priority (How high up the context menu list the action is listed. 0 = lowest priority. (bottom of list))
